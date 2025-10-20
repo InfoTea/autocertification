@@ -1,25 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoCertification – Document Automation SaaS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AutoCertification — Document Automation SaaS</title>
+  <meta name="description" content="Cloud-based software for automated creation of certification documents and reports." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0e0f12; --fg:#e8e8ee; --muted:#a7a7b3; --card:#17181d; --acc:#7c5cff; }
+    * { box-sizing:border-box }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--fg); background:linear-gradient(180deg,#0e0f12 0%,#111318 40%,#0e0f12 100%); }
+    .container { max-width:980px; margin:0 auto; padding:32px 20px; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+    .brand { display:flex; gap:12px; align-items:center; font-weight:700; }
+    .brand .logo { width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,#7c5cff,#4dd4ff); box-shadow:0 6px 30px rgba(124,92,255,.35); }
+    .nav a { color:var(--muted); text-decoration:none; margin-left:18px; font-size:14px }
+    .hero { padding:56px 0 36px; display:grid; gap:22px; }
+    .hero h1 { font-size:42px; line-height:1.08; margin:0 }
+    .hero p { color:var(--muted); font-size:18px; max-width:720px; margin:0 }
+    .cta { display:flex; gap:12px; margin-top:10px; flex-wrap:wrap }
+    .btn { appearance:none; border:0; cursor:pointer; padding:12px 18px; border-radius:12px; font-weight:600; }
+    .btn.primary { background:var(--acc); color:white; box-shadow:0 10px 30px rgba(124,92,255,.35) }
+    .btn.ghost { background:transparent; color:var(--fg); border:1px solid #2a2c35 }
+    .section { margin:40px 0; background:var(--card); border:1px solid #23252e; border-radius:16px; padding:22px; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:10px }
+    .card { background:#14161b; border:1px solid #23252e; border-radius:14px; padding:16px }
+    .card h3 { margin:0 0 6px; font-size:18px }
+    .card p { margin:0; color:var(--muted); font-size:14px }
+    footer { color:var(--muted); font-size:13px; padding:28px 0 60px }
+    footer a { color:var(--muted) }
+  </style>
 </head>
-<body style="font-family:sans-serif;max-width:700px;margin:50px auto;">
-  <h1>AutoCertification</h1>
-  <p>Cloud-based software for document automation and generation. 
-     Users can create and export digital documents using custom templates and integrations.</p>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand"><div class="logo"></div>AutoCertification</div>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <h2>Contact</h2>
-  <p>Email: psyproffy@gmail.com</p>
+    <section class="hero">
+      <h1>Automate certification documents in minutes</h1>
+      <p>Cloud-based software for document automation and generation. Users create and export digital certificates and reports using templates and Google&nbsp;Workspace integrations.</p>
+      <div class="cta">
+        <a class="btn primary" href="#">Try demo</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </section>
 
-  <h2>Terms of Service</h2>
-  <p>This software is provided as-is for document automation purposes. 
-     Payments are handled securely via Paddle, which acts as the Merchant of Record. 
-     Users are responsible for their own data and document content.</p>
+    <section id="features" class="section">
+      <h2>Features</h2>
+      <div class="cards">
+        <div class="card"><h3>Template-driven</h3><p>Create reusable templates and generate consistent documents.</p></div>
+        <div class="card"><h3>Google Workspace</h3><p>Works with Drive, Docs and Sheets through official APIs.</p></div>
+        <div class="card"><h3>One-click export</h3><p>Export to PDF/Docx and deliver securely to recipients.</p></div>
+      </div>
+    </section>
 
-  <h2>Privacy Policy</h2>
-  <p>We do not store or share personal data. 
-     Paddle processes payments and may collect necessary billing information according to their privacy policy.</p>
+    <section id="security" class="section">
+      <h2>Payments & Compliance</h2>
+      <p style="color:var(--muted)">Payments are securely processed by <strong>Paddle</strong> (Merchant of Record). Taxes (incl. VAT) are handled by Paddle. We do not store card data.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+    </section>
+
+    <footer>
+      <span>© <script>document.write(new Date().getFullYear())</script> AutoCertification.</span>
+      &nbsp;·&nbsp;<a href="./offer.html">Public Offer</a>
+      &nbsp;·&nbsp;<a href="./terms.html">Terms</a>
+      &nbsp;·&nbsp;<a href="./privacy.html">Privacy</a>
+    </footer>
+  </div>
 </body>
 </html>
