@@ -306,3 +306,53 @@ input#s3:checked ~ .controls label[for="s3"],
 input#s4:checked ~ .controls label[for="s4"] {
   background: var(--acc);
 }
+
+.gslider {
+  position: relative;
+  overflow: hidden;
+}
+.gslides {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.gslide {
+  flex: 0 0 100%;
+  text-align: center;
+}
+.gslide img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* стрелки поверх любых слоёв */
+.g-prev,
+.g-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999; /* <-- ключевой момент */
+  background: var(--card);
+  color: var(--fg);
+  border: none;
+  font-size: 24px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.g-prev {
+  left: 10px;
+}
+.g-next {
+  right: 10px;
+}
+.g-prev:hover,
+.g-next:hover {
+  opacity: 1;
+}
+
+/* чтобы клики не “съедало” изображение по краям */
+.gslide img {
+  pointer-events: none;
+} /* безопасно для наших кнопок */

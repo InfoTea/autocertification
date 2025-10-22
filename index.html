@@ -90,6 +90,64 @@
         </p>
       </section>
 
+      <section id="gallery" class="section">
+        <h2>Product Showcase</h2>
+        <p>
+          Explore how AutoCertification works — from data entry to automatic
+          document export.
+        </p>
+
+        <div class="gslider">
+          <button class="g-prev" type="button" aria-label="Previous">❮</button>
+
+          <div class="gslides">
+            <div class="gslide g-active">
+              <img
+                src="./assets/BaseContent.png"
+                alt="Database in Google Sheets"
+              />
+              <p class="g-caption">
+                Data management in Google Sheets — all certification records in
+                one place.
+              </p>
+            </div>
+            <div class="gslide">
+              <img
+                src="./assets/OperatorIntarface.png"
+                alt="Operator interface for data entry"
+              />
+              <p class="g-caption">
+                Operator interface — connect fields once, reuse everywhere.
+              </p>
+            </div>
+            <div class="gslide">
+              <img src="./assets/OperatorMenu.png" alt="Operator menu" />
+              <p class="g-caption">
+                Operator menu — several commands rules everything.
+              </p>
+            </div>
+            <div class="gslide">
+              <img
+                src="./assets/GoogleDriveReview.png"
+                alt="All documents in your Google Drive"
+              />
+              <p class="g-caption">All documents in your Google Drive.</p>
+            </div>
+            <div class="gslide">
+              <img
+                src="./assets/GoogleDriveFinalDocuments.png"
+                alt="One-click all document generation in Google Drive"
+              />
+              <p class="g-caption">
+                One-click all document generation in Google Drive.
+              </p>
+            </div>
+          </div>
+
+          <button class="g-next" type="button" aria-label="Next">❯</button>
+        </div>
+      </section>
+
       <section id="solutions" class="section slider">
         <h2>Available Solutions</h2>
         <div class="slides">
@@ -192,5 +250,35 @@
         </p>
       </footer>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const root = document.querySelector(".gslider");
+        if (!root) return;
+        const track = root.querySelector(".gslides");
+        const slides = Array.from(root.querySelectorAll(".gslide"));
+        const prev = root.querySelector(".g-prev");
+        const next = root.querySelector(".g-next");
+        let i = 0;
+
+        function show(n) {
+          i = (n + slides.length) % slides.length;
+          track.style.transform = `translateX(-${i * 100}%)`;
+        }
+        prev.addEventListener("click", () => show(i - 1));
+        next.addEventListener("click", () => show(i + 1));
+
+        let x0 = null;
+        track.addEventListener(
+          "touchstart",
+          (e) => (x0 = e.touches[0].clientX)
+        );
+        track.addEventListener("touchend", (e) => {
+          if (x0 === null) return;
+          const dx = e.changedTouches[0].clientX - x0;
+          if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+          x0 = null;
+        });
+      });
+    </script>
   </body>
 </html>
