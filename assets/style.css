@@ -356,3 +356,9 @@ input#s4:checked ~ .controls label[for="s4"] {
 .gslide img {
   pointer-events: none;
 } /* безопасно для наших кнопок */
+
+.lang .is-active {
+  outline: 2px solid var(--acc);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
